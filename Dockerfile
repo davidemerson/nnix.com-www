@@ -5,7 +5,8 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY index.html /var/www/html/
+COPY nnix.com /etc/nginx/sites-enabled/
 
-EXPOSE 80
+
 
 CMD ["nginx", "-g", "daemon off;"]
