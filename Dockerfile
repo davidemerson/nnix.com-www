@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+EXPOSE 80
+EXPOSE 443
+
 RUN apt-get update && \
     apt-get install nginx -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
