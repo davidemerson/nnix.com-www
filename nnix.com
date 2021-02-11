@@ -1,6 +1,5 @@
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 80;
         server_name nnix.com www.nnix.com;
         location / {
         proxy_set_header   X-Forwarded-For $remote_addr;
