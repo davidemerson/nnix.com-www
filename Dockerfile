@@ -1,18 +1,9 @@
-FROM ubuntu:latest
+FROM nginx:latest
 
 EXPOSE 80
 EXPOSE 443
 
-RUN apt-get update && \
-    apt-get install nginx -y && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    rm -rf /var/www/html && \
-    mkdir /var/www/nnix.com
-
-COPY index.html /var/www/nnix.com/
-COPY nnix.com /etc/nginx/sites-available/
-
-RUN rm -rf /etc/nginx/sites-enabled/default && \
-    ln -s /etc/nginx/sites-available/nnix.com /etc/nginx/sites-enabled/nnix.com
+FROM nginx
+COPY nginx.conf /etc/nginx/nginx.conf
 
 CMD ["nginx", "-g", "daemon off;"]
