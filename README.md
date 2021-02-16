@@ -25,5 +25,8 @@ docker-compose up &
 ./init-letsencrypt.sh
 ```
 
-## note
-There's a 301 redirect in my nginx conf here to ensure http gets routed to https. This might break cert validation, so comment it out if you need to validate, and then you should be good to reintroduce it afterwards.
+## note on .crypto
+If you want to use .crypto domains, you need to add the Unstoppable Domains resolver secure DNS resolver setting in Chrome (of course, this can also be done in Firefox, Brave, Edge, Opera, etc).
+```
+https://resolver.unstoppable.io/dns-query
+```
